@@ -1,8 +1,3 @@
-.header-welcome__component {
-  height: 800px;
-  background: url('https://cnbl-cdn.bamgrid.com/assets/62ed936344e6ffbac48c896b2bd327fe171521dd941b6ddc8402e2eae50116fc/original')
-    no-repeat center center / cover;
-}
 .header-welcome__component nav {
   display: flex;
   justify-content: space-between;
@@ -28,12 +23,9 @@
 .header-welcome__component nav .login-btn__welcome:hover {
   opacity: 0.8;
   color: #fff;
-
   transition-duration: 150ms;
   transition: ease-in-out all 0.5s;
   background-color: rgb(80, 80, 80);
-
-  // background-color:;
 }
 
 .header-welcome__component .logo-welcome__component {
@@ -47,20 +39,33 @@
 
 .header-welcome__component .header-content {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  margin-top: 30px;
 }
 
-.header-welcome__component .header-text-1 {
+.header-content__view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // flex-grow: 1;
+}
+
+.header-welcome__component .header-content-text {
   font-size: 22px;
   font-weight: bold;
-}
-
-.header-welcome__component .header-text-2 {
+  font-family:
+    Graphik Web,
+    Graphik,
+    sans-serif;
   font-size: 18px;
-  margin: 25px 0;
+  width: 40%;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.32;
+  text-transform: none;
+  margin-top: 8px;
 }
 
 .header-welcome__component::after {
