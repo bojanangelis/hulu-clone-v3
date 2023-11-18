@@ -1,5 +1,7 @@
 import { huluPosters } from '../../assets/huluPosters'
 import CoverCardWelcomeComponent from '../CoverCardWelcomeComponent'
+import MainContentDiv from '../MainContentDiv'
+import MainToggleChannels from '../MainToggleChannels'
 import './style.scss'
 
 const MainWelcomeComponent = () => {
@@ -23,6 +25,8 @@ const MainWelcomeComponent = () => {
           />
         ))}
       </div>
+      <MainContentDiv />
+      <MainToggleChannels />
     </main>
   )
 }
