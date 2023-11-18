@@ -1,3 +1,21 @@
+@import '../../global.scss';
+
+.main-header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .links {
+    padding-top: 40px;
+    text-align: center;
+  }
+  h5 {
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
 .header-welcome__component nav {
   display: flex;
   justify-content: space-between;
@@ -31,36 +49,51 @@
 .header-welcome__component .logo-welcome__component {
   cursor: pointer;
 }
+
 .header-welcome__component .logo {
-  width: 180px;
+  width: 280px;
   object-fit: contain;
-  margin: 20px 0;
+}
+
+.header-welcome__component .logo_trio {
+  width: 360px;
+  object-fit: contain;
 }
 
 .header-welcome__component .header-content {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  @include sm {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 80px;
+  }
 }
 
 .header-content__view {
   display: flex;
+  // margin: 8px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // flex-grow: 1;
+  @include sm {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .header-welcome__component .header-content-text {
   font-size: 22px;
   font-weight: bold;
+  padding-bottom: 20px;
   font-family:
     Graphik Web,
     Graphik,
     sans-serif;
-  font-size: 18px;
-  width: 40%;
+  text-align: center;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.32;

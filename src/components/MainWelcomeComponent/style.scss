@@ -1,0 +1,39 @@
+@import '../../global.scss';
+
+.main-content {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content_titles {
+  display: flex;
+  padding-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  p {
+    font-weight: 300;
+  }
+}
+
+.covers {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 50px;
+  @include sm {
+    padding: 0 80px;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include lg {
+    padding: 0 80px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @include xl {
+    padding: 0 240px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
