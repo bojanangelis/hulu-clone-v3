@@ -1,4 +1,4 @@
-@import '../../global.scss';
+@import '../../../../global.scss';
 
 .main-content {
   padding-top: 20px;
@@ -16,6 +16,9 @@
   p {
     font-weight: 300;
   }
+  span {
+    font-size: 40px;
+  }
 }
 
 .covers {
@@ -25,17 +28,16 @@
   padding: 0 50px;
   @include sm {
     padding: 0 80px;
-
     grid-template-columns: repeat(2, 1fr);
   }
   @include lg {
     padding: 0 80px;
     grid-template-columns: repeat(4, 1fr);
   }
-  @include xl {
-    padding: 0 240px;
-    grid-template-columns: repeat(4, 1fr);
-  }
+  // @include xl {
+  //   padding: 0 100px;
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
 }
 
 .live-tv__content {

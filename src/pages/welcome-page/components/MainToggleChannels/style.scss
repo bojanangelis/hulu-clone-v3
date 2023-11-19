@@ -1,7 +1,6 @@
-@import '../../global.scss';
+@import '../../../../global.scss';
 
 .toggle-info {
-  height: 800px;
   position: relative;
   .toggle-shadow {
     position: absolute;
@@ -16,20 +15,58 @@
 
 .toggle-component {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 999;
-  top: 40px;
-  left: 80px;
-  padding: 40px;
+  top: 120px;
+  left: 0px;
+  @include md {
+    left: 40px;
+    padding: 40px;
+  }
+  .active-btn {
+    border-bottom: 1px solid white;
+  }
+  button {
+    padding: 12px 0px;
+    font-size: small;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    background-color: transparent;
+    margin-left: 20px;
+  }
+  button:nth-child(1) {
+    margin-left: 0;
+  }
 }
 
 .toggle-info-content {
   position: absolute;
   top: 160px;
-  left: 100px;
-  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include md {
+    align-items: start;
+    left: 80px;
+  }
+  padding: 0px 8px;
+  max-width: 500px;
   .text-xl {
     font-size: 34px;
     font-weight: 600;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sub-text {
+    font-weight: 300;
+    font-size: small;
   }
   .legal-text {
     padding-top: 20px;

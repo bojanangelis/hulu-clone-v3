@@ -1,4 +1,4 @@
-import { huluPosters } from '../../assets/huluPosters'
+import { huluPosters } from '../../../../assets/huluPosters'
 import CoverCardWelcomeComponent from '../CoverCardWelcomeComponent'
 import MainContentDiv from '../MainContentDiv'
 import MainToggleChannels from '../MainToggleChannels'
@@ -9,7 +9,7 @@ const MainWelcomeComponent = () => {
     <main className='main-content'>
       <div className='main-content_titles'>
         <h4>INCLUDED IN ALL PLANS</h4>
-        <h2>All The TV You Love</h2>
+        <span>All The TV You Love</span>
         <p>
           Watch full seasons of exclusive streaming series, current-season episodes, hit movies,
           Hulu Originals, kids shows, and more.
