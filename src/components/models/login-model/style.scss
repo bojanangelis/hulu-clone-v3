@@ -64,6 +64,13 @@
   }
 }
 
+.error {
+  padding-top: 8px;
+  color: red;
+  font-weight: 400;
+  font-size: small;
+}
+
 .form-group {
   width: 100%;
   margin-bottom: 20px;
@@ -76,7 +83,7 @@
     border: 1px solid rgb(99, 110, 133);
     border-radius: 4px;
     outline: none;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 32px;
     letter-spacing: 0.5px;
   }
@@ -103,6 +110,9 @@
 
 .form-actions {
   padding-top: 20px;
+  .active-button {
+    background-color: rgb(39, 44, 53);
+  }
   button {
     background-color: #93969a;
     color: white;
@@ -114,12 +124,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  line-height: 1.125;
+  color: rgb(139, 148, 167);
   a {
     padding-left: 4px;
     color: rgb(60, 136, 235);
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 1.125;
     font-family: Graphik, Arial, Helvetica, sans-serif;
   }
 }

@@ -1,7 +1,14 @@
-import Routes from './pages/routes'
+import { BrowserRouter } from 'react-router-dom'
+import RouteNavigation from './pages/routes'
 
 function App() {
-  return <Routes />
+  return (
+    <>
+      <BrowserRouter>
+        <RouteNavigation />
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App

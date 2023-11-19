@@ -1,11 +1,12 @@
-import Header from './components/header-sign-up'
-import PlansComponent from './components/plans-component'
+import Header from '../plans/components/header-sign-up'
+import FormInput from './FormInput'
+import './style.scss'
 
 const SignUpPage = () => {
   return (
     <>
       <Header />
-      <PlansComponent />
+      <FormInput />
     </>
   )
 }

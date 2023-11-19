@@ -1,7 +1,8 @@
 import './style.scss'
 import XIcon from '../../../assets/x-icon.svg'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSignIn } from '@clerk/clerk-react'
 
 interface LoginModelProps {
   onClose: () => void
@@ -9,7 +10,12 @@ interface LoginModelProps {
 }
 
 const LoginModel = ({ onClose, isOpen }: LoginModelProps) => {
-  const [active, setActive] = useState(false)
+  const { isLoaded, signIn, setActive } = useSignIn()
+  const [activeModel, setActiveModel] = useState(false)
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
+  const [emailAddress, setEmailAddress] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (event.target === event.currentTarget) {
@@ -20,23 +26,48 @@ const LoginModel = ({ onClose, isOpen }: LoginModelProps) => {
   useEffect(() => {
     if (isOpen) {
       // A slight delay to trigger the CSS transition
-      requestAnimationFrame(() => setActive(true))
+      requestAnimationFrame(() => setActiveModel(true))
     } else {
-      setActive(false)
+      setActiveModel(false)
     }
   }, [isOpen])
 
   // When the modal is closing, wait for the animation to finish before unmounting
   const handleTransitionEnd = () => {
-    if (!active && !isOpen) {
+    if (!activeModel && !isOpen) {
       onClose()
     }
   }
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault()
+    if (!isLoaded) {
+      return
+    }
 
-  if (!isOpen && !active) return null
+    try {
+      const result = await signIn.create({
+        identifier: emailAddress,
+        password,
+      })
+
+      if (result.status === 'complete') {
+        console.log(result)
+        await setActive({ session: result.createdSessionId })
+        navigate('/')
+      } else {
+        /*Investigate why the login hasn't completed */
+        console.log(result)
+      }
+    } catch (err: any) {
+      console.error('error', err.errors[0].longMessage)
+      setError(err.errors[0].longMessage)
+    }
+  }
+
+  if (!isOpen && !activeModel) return null
   return (
     <div
-      className={`modal-overlay${active ? ' active' : ''}`}
+      className={`modal-overlay${activeModel ? ' active' : ''}`}
       onTransitionEnd={handleTransitionEnd}
       onClick={handleOverlayClick}
     >
@@ -55,21 +86,42 @@ const LoginModel = ({ onClose, isOpen }: LoginModelProps) => {
           <form>
             <div className='form-group'>
               <label htmlFor='email'>Email</label>
-              <input type='email' />
+              <input
+                value={emailAddress}
+                onChange={(e) => setEmailAddress(e.target.value)}
+                id='email'
+                name='email'
+                type='email'
+                autoComplete='email'
+              />
             </div>
             <div className='form-group'>
               <label htmlFor='password'>password</label>
-              <input type='password' />
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                id='password'
+                name='password'
+                type='password'
+                autoComplete='current-password'
+              />
             </div>
             <a href='#'>Forgot your email or password?</a>
             <div className='form-actions'>
-              <button className='button-primary' type='submit'>
+              <button
+                onClick={handleSubmit}
+                className={`button-primary ${
+                  password.length > 2 && emailAddress.length > 4 && 'active-button'
+                }`}
+                type='submit'
+              >
                 LOG IN
               </button>
             </div>
           </form>
         </div>
-        <div className='modal-footer'>
+        {error && <p className='error'>{error}</p>}
+        <div className={`modal-footer`}>
           Don't have an account? <Link to={'/plans'}> Start your free trial</Link>
         </div>
       </div>

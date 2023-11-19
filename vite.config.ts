@@ -23,4 +23,7 @@ export default defineConfig({
       exclude: '',
     }),
   ],
+  define: {
+    'process.env': {},
+  },
 })

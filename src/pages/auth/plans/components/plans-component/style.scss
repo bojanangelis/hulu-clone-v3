@@ -1,0 +1,150 @@
+@import '../../../../../global.scss';
+.plans-main__component {
+  position: relative;
+  background-color: #f7f7f9;
+  color: black;
+  padding: 20px;
+  padding-bottom: 120px;
+}
+
+.choose-plans__title {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+.choose-plans__page-subtitle {
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #636e85;
+  }
+}
+
+.row__price--carousel {
+  margin-top: 80px;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 24px;
+  padding-right: 400px;
+  color: black;
+}
+
+.row__price--carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.selected--plans__about {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  @include lg {
+    padding: 80px;
+    padding-left: 120px;
+  }
+  .selected--plan__img {
+    padding: 10px 0;
+    height: 65px;
+    width: 240px;
+    object-fit: contain;
+  }
+  .selected--plan__title {
+    font-weight: 500;
+    font-size: medium;
+  }
+  .selected--plan__price {
+    font-weight: 200;
+    font-size: small;
+    color: #636e85;
+  }
+  .selected--plan__description {
+    font-weight: 400;
+    font-size: medium;
+    color: #636e85;
+  }
+  a {
+    padding-top: 40px;
+    color: #176ee1;
+  }
+}
+.plans__view {
+  margin: auto;
+  border: 2px solid gray;
+  padding: 20px;
+  margin: 0 40px;
+  border-radius: 4px;
+  .plans__view--component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include lg {
+      flex-direction: row;
+      margin: 0 180px;
+      justify-content: space-around;
+    }
+    .plans__view--image {
+      padding: 10px 0;
+      height: 60px;
+      width: 220px;
+      object-fit: contain;
+      padding: 40px;
+      @include lg {
+        padding: 0;
+      }
+    }
+    .plans__view--content {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      @include lg {
+        align-items: flex-start;
+      }
+      .plans__view--subTitle {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #636e85;
+      }
+      .plans__view--title {
+        font-weight: bold;
+      }
+    }
+    a {
+      font-size: 14px;
+      color: #176ee1;
+    }
+  }
+  .plans__view--buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    @include lg {
+      padding-top: 0;
+    }
+    button {
+      background-color: transparent;
+      border: 2px solid #636e85;
+      min-width: 140px;
+    }
+  }
+}
+.selected__plan--button {
+  position: fixed;
+  bottom: 0px;
+  width: 97%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    background-color: #272c35;
+    color: white;
+  }
+}

@@ -1,0 +1,64 @@
+@import '../../../../global.scss';
+
+.form-input__main {
+  position: relative;
+  background-color: #f7f7f9;
+  color: black;
+  padding: 20px;
+  padding-bottom: 120px;
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px;
+  }
+}
+
+.form-input__title {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .form-input__subtitle {
+    p {
+      font-size: 1rem;
+      text-align: center;
+      text-overflow: clip;
+      font-weight: 400;
+      color: #636e85;
+    }
+  }
+  padding-bottom: 60px;
+}
+
+.form-input__content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  max-width: 600px;
+  @include md {
+    padding: 80px;
+  }
+  .form-input__about {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #636e85;
+  }
+  .form-input__form {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.form-input__error {
+  color: red;
+  font-size: small;
+}
