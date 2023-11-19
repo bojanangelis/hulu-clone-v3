@@ -5,41 +5,42 @@ import { useEffect } from 'react'
 import PlansPage from '../auth/plans'
 import SignUpPage from '../auth/signup-page'
 import LoginPage from '../auth/login-page'
+import HomePage from '../home'
 
 const RouteNavigation = () => {
-  const { isLoaded, isSignedIn } = useUser()
+  // const { isLoaded, isSignedIn } = useUser()
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (!isLoaded && !isSignedIn) {
-      navigate('welcome')
-    } else {
-      navigate('')
-    }
+  // useEffect(() => {
+  //   if (!isLoaded && !isSignedIn) {
+  //     navigate('welcome')
+  //   } else {
+  //     navigate('')
+  //   }
 
-    return () => {}
-  }, [])
+  //   return () => {}
+  // }, [])
 
   return (
     <Routes>
-      <Route
+      {/* <Route
         path='/welcome'
         element={
-          <SignedOut>
-            <WelcomePage />
-          </SignedOut>
+          // <SignedOut>
+          <WelcomePage />
+          // </SignedOut>
         }
       />
       <Route path='/plans' element={<PlansPage />} />
       <Route path='/login' element={<LoginPage />} />
-      <Route path='/sign-up' element={<SignUpPage />} />
+      <Route path='/sign-up' element={<SignUpPage />} /> */}
       <Route
         path='/'
         element={
           <>
-            <SignedIn>
-              <div>daaa signed in sum</div>
-            </SignedIn>
+            {/* <SignedIn> */}
+            <HomePage />
+            {/* </SignedIn> */}
           </>
         }
       />
