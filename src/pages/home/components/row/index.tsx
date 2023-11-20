@@ -8,8 +8,9 @@ interface RowProps {
   fetchUrl?: string
   favorites?: any
   isLargeRow?: boolean
+  modal?: boolean
 }
-function Row({ title, fetchUrl, isLargeRow = false, favorites }: RowProps) {
+function Row({ title, fetchUrl, isLargeRow = false, favorites, modal }: RowProps) {
   const [movies, setMovies] = useState<any>([])
   const navigate = useNavigate()
   useEffect(() => {
@@ -37,7 +38,7 @@ function Row({ title, fetchUrl, isLargeRow = false, favorites }: RowProps) {
           (movie: any) =>
             ((isLargeRow && movie.poster_path) || (!isLargeRow && movie.backdrop_path)) && (
               <img
-                onClick={() => navigate(`/movie/${movie.id}`)}
+                onClick={() => (modal ? null : navigate(`/movie/${movie.id}`))}
                 key={movie.id}
                 className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
                 src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}

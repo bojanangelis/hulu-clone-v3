@@ -8,8 +8,9 @@ import { MovieContext } from '../../../../store/movie-context'
 
 interface BannerProps {
   movieId?: string
+  modal?: boolean
 }
-const Banner = ({ movieId }: BannerProps) => {
+const Banner = ({ movieId, modal }: BannerProps) => {
   const { movie, setMovie, setFavorites, favorites } = useContext(MovieContext)
 
   const API_KEY = import.meta.env.VITE_REACT_TMDB_API_KEY
@@ -69,16 +70,18 @@ const Banner = ({ movieId }: BannerProps) => {
         <h2 className='banner__description--more'>
           {movie?.popularity} views · {movie?.vote_average} · Originals
         </h2>
-        <div className='banner__buttons'>
-          <button className='banner__button--play'>
-            <img src={PlayArrowIcon} alt='play button' />
-            Play
-          </button>
-          <button onClick={handleFavorites} className='banner__button--moreInfo'>
-            add to your favorites
-            <img src={InfoOutlinedIcon} alt='arrow right' />
-          </button>
-        </div>
+        {!modal && (
+          <div className='banner__buttons'>
+            <button className='banner__button--play'>
+              <img src={PlayArrowIcon} alt='play button' />
+              Play
+            </button>
+            <button onClick={handleFavorites} className='banner__button--moreInfo'>
+              add to your favorites
+              <img src={InfoOutlinedIcon} alt='arrow right' />
+            </button>
+          </div>
+        )}
       </div>
       <div className='banner--fadeBottom' />
     </div>
