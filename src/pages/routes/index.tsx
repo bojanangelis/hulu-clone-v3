@@ -2,45 +2,45 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import WelcomePage from '../welcome-page'
 import { SignedIn, SignedOut, useUser } from '@clerk/clerk-react'
 import { useEffect } from 'react'
-import PlansPage from '../auth/plans'
 import SignUpPage from '../auth/signup-page'
 import LoginPage from '../auth/login-page'
 import HomePage from '../home'
+import PlansPage from '../auth/plans'
 
 const RouteNavigation = () => {
-  // const { isLoaded, isSignedIn } = useUser()
+  const { isLoaded, isSignedIn } = useUser()
   const navigate = useNavigate()
+  console.log('isLoaded', isLoaded, isSignedIn)
+  useEffect(() => {
+    if (!isLoaded && !isSignedIn) {
+      navigate('welcome')
+    } else {
+      navigate('')
+    }
 
-  // useEffect(() => {
-  //   if (!isLoaded && !isSignedIn) {
-  //     navigate('welcome')
-  //   } else {
-  //     navigate('')
-  //   }
-
-  //   return () => {}
-  // }, [])
+    return () => {}
+  }, [])
 
   return (
     <Routes>
-      {/* <Route
+      <Route
         path='/welcome'
         element={
-          // <SignedOut>
-          <WelcomePage />
-          // </SignedOut>
+          <SignedOut>
+            <WelcomePage />
+          </SignedOut>
         }
       />
       <Route path='/plans' element={<PlansPage />} />
       <Route path='/login' element={<LoginPage />} />
-      <Route path='/sign-up' element={<SignUpPage />} /> */}
+      <Route path='/sign-up' element={<SignUpPage />} />
       <Route
         path='/'
         element={
           <>
-            {/* <SignedIn> */}
-            <HomePage />
-            {/* </SignedIn> */}
+            <SignedIn>
+              <HomePage />
+            </SignedIn>
           </>
         }
       />
@@ -49,30 +49,3 @@ const RouteNavigation = () => {
 }
 
 export default RouteNavigation
-
-{
-  /* <Routes>
-<Route path="/" element={<PublicPage />} />
-<Route
-  path="/sign-in/*"
-  element={<SignIn routing="path" path="/sign-in" />}
-/>
-<Routes
-  path="/sign-up/*"
-  element={<SignUp routing="path" path="/sign-up" />}
-/>
-<Route
-  path="/protected"
-  element={
-  <>
-    <SignedIn>
-      <ProtectedPage />
-    </SignedIn>
-    <SignedOut>
-      <RedirectToSignIn />
-    </SignedOut>
-  </>
-  }
-/>
-</Routes> */
-}

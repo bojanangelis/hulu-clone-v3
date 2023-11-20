@@ -41,7 +41,7 @@ function Nav() {
             <a href='#'>My Stuff</a>
           </li>
         </ul>
-        <div>
+        <div className='nav__avatar'>
           <UserButton />
         </div>
       </div>
