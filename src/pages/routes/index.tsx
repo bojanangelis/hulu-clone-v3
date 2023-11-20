@@ -10,7 +10,6 @@ import PlansPage from '../auth/plans'
 const RouteNavigation = () => {
   const { isLoaded, isSignedIn } = useUser()
   const navigate = useNavigate()
-  console.log('isLoaded', isLoaded, isSignedIn)
   useEffect(() => {
     if (!isLoaded && !isSignedIn) {
       navigate('welcome')
