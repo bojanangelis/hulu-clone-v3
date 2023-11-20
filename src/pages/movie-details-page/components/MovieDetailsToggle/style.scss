@@ -1,0 +1,40 @@
+.main__movie--details {
+  padding: 40px;
+  color: #272c34;
+  .movie__details--toggle {
+    display: flex;
+    align-items: center;
+    a {
+      cursor: pointer;
+      color: #272c34;
+      margin-right: 30px;
+      font-weight: 500;
+      font-size: small;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+    }
+    a:hover {
+      color: #176ee1;
+      border-bottom: 4px solid orange;
+    }
+    .active {
+      border-bottom: 4px solid orange;
+    }
+  }
+  .movie__details--div {
+    background-color: white;
+    padding: 40px;
+
+    .movie__details--title {
+      font-weight: 500;
+    }
+    .movie__details--details {
+      color: #6e7a91;
+      font-family: 'Graphik Web', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+  }
+}

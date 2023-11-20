@@ -1421,6 +1421,11 @@ globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
+goober@^2.0.37:
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.1.13.tgz#e3c06d5578486212a76c9eba860cbc3232ff6d7c"
+  integrity sha512-jFj3BQeleOoy7t93E9rZ2de+ScC4lQICLwiAQmKMg9F6roKGaLSHoCDYKkWlSafg138jejvq/mTdvmnwDQgqoQ==
+
 graphemer@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
@@ -1935,6 +1940,13 @@ react-router@6.19.0:
   integrity sha512-0W63PKCZ7+OuQd7Tm+RbkI8kCLmn4GPjDbX61tWljPxWgqTKlEpeQUwPkT1DRjYhF8KSihK0hQpmhU4uxVMcdw==
   dependencies:
     "@remix-run/router" "1.12.0"
+
+react-star-rate@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-star-rate/-/react-star-rate-0.2.0.tgz#11857c6d351129aff7a809209b115b484f8f0edb"
+  integrity sha512-t5LNriqbQH8gcRdWolSkDc+Iox68UKyS3olbKDKXcg07PRmYxF96Q0sDot1M2hmDDv9iR0Cm74DMbAGvLTMdag==
+  dependencies:
+    goober "^2.0.37"
 
 react@^18.2.0:
   version "18.2.0"

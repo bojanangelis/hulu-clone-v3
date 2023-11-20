@@ -1,5 +1,5 @@
 const API_KEY = import.meta.env.VITE_REACT_TMDB_API_KEY
-console.log('this is api-', API_KEY)
+
 export const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
   fetchHuluOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,

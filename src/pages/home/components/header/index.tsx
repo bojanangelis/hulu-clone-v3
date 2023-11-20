@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './style.scss'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserButton } from '@clerk/clerk-react'
 import Hulu from '../../../../assets/hulu.svg'
 function Nav() {
@@ -26,7 +26,7 @@ function Nav() {
         <img onClick={() => navigate('/')} className='nav__logo' src={Hulu} alt='hulu logo' />
         <ul className='nav__links'>
           <li>
-            <a href='#'>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li>
             <a href='#'>Live</a>
@@ -38,7 +38,7 @@ function Nav() {
             <a href='#'>Sports</a>
           </li>
           <li>
-            <a href='#'>My Stuff</a>
+            <Link to='/my-stuff'>My Stuff</Link>
           </li>
         </ul>
         <div className='nav__avatar'>

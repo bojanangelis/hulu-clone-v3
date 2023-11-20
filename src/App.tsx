@@ -1,12 +1,15 @@
 import { BrowserRouter } from 'react-router-dom'
 import RouteNavigation from './pages/routes'
+import { MovieProvider } from './store/movie-context'
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <RouteNavigation />
-      </BrowserRouter>
+      <MovieProvider>
+        <BrowserRouter>
+          <RouteNavigation />
+        </BrowserRouter>
+      </MovieProvider>
     </>
   )
 }
